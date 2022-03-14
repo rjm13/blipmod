@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { Text, View, FlatList, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import { format, parseISO } from "date-fns";
 
-
+import { getStory, getUser, storiesByDate, listComments, listPinnedStories, listRatings, listStoryTags, listFinishedStories } from '../src/graphql/queries';
+import {graphqlOperation, API, Auth, Storage} from 'aws-amplify';
 
 const PendingStories = ({navigation} : any) => {
 
@@ -14,6 +15,24 @@ const PendingStories = ({navigation} : any) => {
       createdAt: new Date()
     }
   ])
+
+  useEffect(() => {
+    const fetchStories = async () => {
+      let response = await API.graphql(graphqlOperation(
+        storiesByDate, {
+          type: 'Story',
+          sortDirection: 'DESC',
+          filter: {
+            isApproved: {
+              eq: true
+            }
+          }
+        }
+      ))
+      setPendingStories(response.data.storiesByDate.items)
+    }
+    fetchStories();
+  }, [])
 
   const Item = ({id, title, time, createdAt} : any) => {
 

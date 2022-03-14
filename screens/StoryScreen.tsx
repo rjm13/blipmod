@@ -26,9 +26,9 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { format, parseISO } from "date-fns";
 
-//import {graphqlOperation, API, Auth, Storage} from 'aws-amplify';
-//import { getStory, getUser, listComments, listPinnedStories, listRatings, listStoryTags, listFinishedStories } from '../src/graphql/queries';
-//import { createComment, createFlag, createRating, updateRating, updateStory } from '../src/graphql/mutations';
+import {graphqlOperation, API, Auth, Storage} from 'aws-amplify';
+import { getStory, getUser, listComments, listPinnedStories, listRatings, listStoryTags, listFinishedStories } from '../src/graphql/queries';
+//import { createComment, createFlag, createRating, updateRating, updateStory } from './src/graphql/mutations';
 
 
 
@@ -63,22 +63,22 @@ const StoryScreen  = ({navigation} : any) => {
 //set global state context to the storyID to play the story
     const onPlay = () => {console.log('play')}
 
-//get the story attributes using the storyID
-    // useEffect(() => {
-    //     const fetchStory = async () => {
-    //         try {
-    //             const storyData = await API.graphql(graphqlOperation(getStory, {id: storyID}))
+// //get the story attributes using the storyID
+//     useEffect(() => {
+//         const fetchStory = async () => {
+//             try {
+//                 const storyData = await API.graphql(graphqlOperation(getStory, {id: storyID}))
 
-    //             if (storyData) {
-    //                 setStory(storyData.data.getStory);
-    //                 let response = await Storage.get(storyData.data.getStory.imageUri);
-    //                 setImageU(response);
-    //             }
-    //         } catch (e) {
-    //             console.log(e);
-    //         }}
-    //     fetchStory();
-    // }, [storyID])
+//                 if (storyData) {
+//                     setStory(storyData.data.getStory);
+//                     let response = await Storage.get(storyData.data.getStory.imageUri);
+//                     setImageU(response);
+//                 }
+//             } catch (e) {
+//                 console.log(e);
+//             }}
+//         fetchStory();
+//     }, [storyID])
 
     const [imageU, setImageU] = useState('')
 
