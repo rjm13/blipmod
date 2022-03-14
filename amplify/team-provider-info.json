@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blipmod-dev-122524-authRole",
+      "UnauthRoleArn": "arn:aws:iam::904548764347:role/amplify-blipmod-dev-122524-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::904548764347:role/amplify-blipmod-dev-122524-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-blipmod-dev-122524-deployment",
+      "UnauthRoleName": "amplify-blipmod-dev-122524-unauthRole",
+      "StackName": "amplify-blipmod-dev-122524",
+      "StackId": "arn:aws:cloudformation:us-east-2:904548764347:stack/amplify-blipmod-dev-122524/bf3535b0-a3bb-11ec-a7a6-0a8e6831593e",
+      "AmplifyAppId": "d3auq92dyrhw3f"
+    }
+  }
+}
